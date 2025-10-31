@@ -16,7 +16,27 @@ while (true) {
 
     switch (choice) {
         case '1':
-            alert(`Dfi ,fkfyc: ${баланс} ₽`)
+            alert(`Ваш баланс: ${баланс} ₽`)
             break;
-    }
-}
+        case '2':
+            const amountToWithdraw = Number(prompt('введите сумму для снятия'));
+            if (isNaN(amountToWithdraw) || amountToWithdraw <= 0) {
+                alert('Ошибка: Введена некорректная сумма.');
+            }else if (amountToWithdraw > balance) {
+                alert('Ошибка:недостаточно средств на счете.');
+            } else {
+                balance -= amountToWithdraw;
+                alert('снятие успешно. Ваш Баланс: ${баланс}')
+            }
+
+            case '3':
+                const amountToDeposit = Number(prompt('Введите сумму для снятия'));
+                if (isNaN(amountToDeposit) || amountToDeposit <+0) {
+                    alert('Ошибка: введена некорректная сумма.');
+                } else {
+                    balance =+ amountToDeposit;
+                    alert('Счет пополнен. Ваш Баланс: ${balance}');
+                }
+                break;
+            }
+        }
